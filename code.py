@@ -21,14 +21,14 @@ def crack(p):
    try:
     # open PDF file
     with pikepdf.open(p, password=password) as pdf:
-     # Password decrypted successfully, break out of the loop
+     # Password decrypted successfully
      print("[+] Password found:", password)
      x=i.split('.pdf')[0]
      y=x+"_DECRYPTED.pdf"
      pdf.save(y)
      shutil.move(y, 'Decrypted')
      pdf.close()
-     #os.remove(i)
+     # break out of the loop
      break
    except pikepdf._qpdf.PasswordError as e:
     # wrong password, just continue in the loop
