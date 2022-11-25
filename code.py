@@ -25,6 +25,7 @@ def crack(p):
      print("[+] Password found:", password)
      x=i.split('.pdf')[0]
      y=x+"_DECRYPTED.pdf"
+     # Save the pdf
      pdf.save(y)
      shutil.move(y, 'Decrypted')
      pdf.close()
