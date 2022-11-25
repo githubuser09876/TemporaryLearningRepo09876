@@ -10,6 +10,7 @@ passwords = passwords = [ line.strip() for line in open(wordlist) ]
 try:
     os.mkdir('Decrypted')
 except FileExistsError as e:
+    #pass
     pass
 
 # iterate over passwords
@@ -25,6 +26,7 @@ def crack(p):
      print("[+] Password found:", password)
      x=i.split('.pdf')[0]
      y=x+"_DECRYPTED.pdf"
+     # Save the pdf
      pdf.save(y)
      shutil.move(y, 'Decrypted')
      pdf.close()
