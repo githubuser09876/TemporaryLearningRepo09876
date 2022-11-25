@@ -10,7 +10,6 @@ passwords = passwords = [ line.strip() for line in open(wordlist) ]
 try:
     os.mkdir('Decrypted')
 except FileExistsError as e:
-    #pass
     pass
 
 # iterate over passwords
